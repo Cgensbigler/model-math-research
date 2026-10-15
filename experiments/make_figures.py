@@ -309,6 +309,10 @@ def fig7_sensitivity(sens_summary, baseline_entry, ref_m):
             if key in ref_m and group == "metrics":
                 ax.axhline(ref_m[key], color=REF_C, lw=1, ls="--", alpha=0.7)
             ax.set_xscale("log")
+            ax.set_xticks(xs)
+            ax.set_xticklabels([f"{x:g}" for x in xs], fontsize=6.5)
+            ax.xaxis.set_minor_formatter(matplotlib.ticker.NullFormatter())
+            ax.tick_params(axis="x", which="minor", bottom=False)
             if i == 0:
                 ax.set_title(label, fontsize=9)
             if j == 0:

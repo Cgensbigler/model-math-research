@@ -1,0 +1,65 @@
+=== Anatomical reference tree ===
+  nodes=981 terminals=364 coverage=0.925 fitness=0.638
+=== Main evolution (baseline weights) ===
+  gen   0  best=+0.4047 cov=0.862 T=1.21 V=1.34 P=0.22 terms=2398
+  gen   1  best=+0.4928 cov=0.825 T=0.97 V=0.86 P=0.04 terms=353
+  gen   2  best=+0.5076 cov=0.821 T=0.97 V=0.62 P=0.10 terms=383
+  gen   3  best=+0.5921 cov=0.910 T=0.78 V=1.15 P=0.07 terms=577
+  gen   4  best=+0.6225 cov=0.983 T=0.45 V=2.47 P=0.02 terms=2286
+  gen   5  best=+0.6469 cov=0.978 T=0.42 V=2.24 P=0.04 terms=2257
+  gen   6  best=+0.6490 cov=0.944 T=0.77 V=0.96 P=0.07 terms=592
+  gen   7  best=+0.6541 cov=0.935 T=0.80 V=0.70 P=0.11 terms=484
+  gen   8  best=+0.7298 cov=0.974 T=0.48 V=1.06 P=0.19 terms=2368
+  gen   9  best=+0.7298 cov=0.974 T=0.48 V=1.06 P=0.19 terms=2368
+  gen  10  best=+0.7704 cov=0.990 T=0.40 V=0.95 P=0.26 terms=2345
+  gen  11  best=+0.7704 cov=0.990 T=0.40 V=0.95 P=0.26 terms=2345
+  gen  12  best=+0.7704 cov=0.990 T=0.40 V=0.95 P=0.26 terms=2345
+  gen  13  best=+0.7704 cov=0.990 T=0.40 V=0.95 P=0.26 terms=2345
+  gen  14  best=+0.7704 cov=0.990 T=0.40 V=0.95 P=0.26 terms=2345
+  gen  15  best=+0.7745 cov=0.992 T=0.39 V=0.74 P=0.46 terms=2325
+  gen  16  best=+0.7745 cov=0.992 T=0.39 V=0.74 P=0.46 terms=2325
+  gen  17  best=+0.7745 cov=0.992 T=0.39 V=0.74 P=0.46 terms=2325
+  gen  18  best=+0.7793 cov=1.000 T=0.39 V=0.67 P=0.55 terms=2342
+  gen  19  best=+0.7793 cov=1.000 T=0.39 V=0.67 P=0.55 terms=2342
+  gen  20  best=+0.7793 cov=1.000 T=0.39 V=0.67 P=0.55 terms=2342
+  gen  21  best=+0.7793 cov=1.000 T=0.39 V=0.67 P=0.55 terms=2342
+  gen  22  best=+0.7892 cov=0.994 T=0.36 V=0.83 P=0.33 terms=2323
+  gen  23  best=+0.7892 cov=0.994 T=0.36 V=0.83 P=0.33 terms=2323
+  gen  24  best=+0.7892 cov=0.994 T=0.36 V=0.83 P=0.33 terms=2323
+  gen  25  best=+0.7892 cov=0.994 T=0.36 V=0.83 P=0.33 terms=2323
+  gen  26  best=+0.7892 cov=0.994 T=0.36 V=0.83 P=0.33 terms=2323
+  gen  27  best=+0.7901 cov=1.000 T=0.37 V=0.79 P=0.39 terms=2382
+  gen  28  best=+0.7901 cov=1.000 T=0.37 V=0.79 P=0.39 terms=2382
+  gen  29  best=+0.7901 cov=1.000 T=0.37 V=0.79 P=0.39 terms=2382
+  gen  30  best=+0.7901 cov=1.000 T=0.37 V=0.79 P=0.39 terms=2382
+  gen  31  best=+0.7901 cov=1.000 T=0.37 V=0.79 P=0.39 terms=2382
+  gen  32  best=+0.7901 cov=1.000 T=0.37 V=0.79 P=0.39 terms=2382
+  gen  33  best=+0.7901 cov=1.000 T=0.37 V=0.79 P=0.39 terms=2382
+  gen  34  best=+0.7901 cov=1.000 T=0.37 V=0.79 P=0.39 terms=2382
+  gen  35  best=+0.7990 cov=0.998 T=0.34 V=0.72 P=0.42 terms=2341
+  gen  36  best=+0.7990 cov=0.998 T=0.34 V=0.72 P=0.42 terms=2341
+  gen  37  best=+0.7990 cov=0.998 T=0.34 V=0.72 P=0.42 terms=2341
+  gen  38  best=+0.7990 cov=0.998 T=0.34 V=0.72 P=0.42 terms=2341
+  gen  39  best=+0.7990 cov=0.998 T=0.34 V=0.72 P=0.42 terms=2341
+  gen  40  best=+0.7990 cov=0.998 T=0.34 V=0.72 P=0.42 terms=2341
+  gen  41  best=+0.7990 cov=0.998 T=0.34 V=0.72 P=0.42 terms=2341
+  gen  42  best=+0.7990 cov=0.998 T=0.34 V=0.72 P=0.42 terms=2341
+  gen  43  best=+0.7990 cov=0.998 T=0.34 V=0.72 P=0.42 terms=2341
+  gen  44  best=+0.7990 cov=0.998 T=0.34 V=0.72 P=0.42 terms=2341
+  gen  45  best=+0.7990 cov=0.998 T=0.34 V=0.72 P=0.42 terms=2341
+  gen  46  best=+0.7990 cov=0.998 T=0.34 V=0.72 P=0.42 terms=2341
+  gen  47  best=+0.7990 cov=0.998 T=0.34 V=0.72 P=0.42 terms=2341
+  gen  48  best=+0.7990 cov=0.998 T=0.34 V=0.72 P=0.42 terms=2341
+  gen  49  best=+0.7990 cov=0.998 T=0.34 V=0.72 P=0.42 terms=2341
+  gen  50  best=+0.7990 cov=0.998 T=0.34 V=0.72 P=0.42 terms=2341
+  gen  51  best=+0.7990 cov=0.998 T=0.34 V=0.72 P=0.42 terms=2341
+  gen  52  best=+0.7990 cov=0.998 T=0.34 V=0.72 P=0.42 terms=2341
+  gen  53  best=+0.7990 cov=0.998 T=0.34 V=0.72 P=0.42 terms=2341
+  gen  54  best=+0.7990 cov=0.998 T=0.34 V=0.72 P=0.42 terms=2341
+  gen  55  best=+0.7990 cov=0.998 T=0.34 V=0.72 P=0.42 terms=2341
+  gen  56  best=+0.7990 cov=0.998 T=0.34 V=0.72 P=0.42 terms=2341
+  gen  57  best=+0.7990 cov=0.998 T=0.34 V=0.72 P=0.42 terms=2341
+  gen  58  best=+0.7990 cov=0.998 T=0.34 V=0.72 P=0.42 terms=2341
+  gen  59  best=+0.7990 cov=0.998 T=0.34 V=0.72 P=0.42 terms=2341
+  evolution took 140s
+  best fitness=0.7990 coverage=0.998 nodes=4050 terminals=2341

@@ -1,0 +1,7 @@
+=== diversity seed 0 ===
+  fit=0.7941 cov=1.000 terms=2385 FD=2.07 (87s)
+=== diversity seed 1 ===
+  fit=0.7964 cov=1.000 terms=2322 FD=2.03 (82s)
+=== diversity seed 2 ===
+  fit=0.7801 cov=0.990 terms=982 FD=1.83 (55s)
+=== diversity seed 3 ===

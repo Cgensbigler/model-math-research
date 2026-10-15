@@ -23,7 +23,7 @@ def _segments(tree: VascularTree):
 def draw_tree_3d(ax, tree: VascularTree, body: Body | None = None,
                  color_by: str = "radius", cmap: str = "turbo",
                  lw_scale: float = 900.0, body_alpha: float = 0.025,
-                 elev: float = 10, azim: float = -75):
+                 elev: float = 10, azim: float = -75, zoom: float = 1.7):
     segs = _segments(tree)
     r = tree.radius[1:]
     if body is not None:
@@ -41,7 +41,7 @@ def draw_tree_3d(ax, tree: VascularTree, body: Body | None = None,
     ax.set_xlim(-0.45, 0.45)
     ax.set_ylim(-0.45, 0.45)
     ax.set_zlim(0.0, 1.8)
-    ax.set_box_aspect((1, 1, 2))
+    ax.set_box_aspect((1, 1, 2), zoom=zoom)
     ax.view_init(elev=elev, azim=azim)
     ax.set_axis_off()
     return lc

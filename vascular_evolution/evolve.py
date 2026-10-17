@@ -15,7 +15,7 @@ import multiprocessing as mp
 
 import numpy as np
 
-from .body import build_body
+from .body import build_body, build_box
 from .fitness import evaluate_genome
 from .growth import GENE_HIGH, GENE_LOW, GENE_NAMES, random_genome
 from .physics import DiffusionModel
@@ -23,8 +23,8 @@ from .physics import DiffusionModel
 _WORKER = {}
 
 
-def _init_worker(weights, growth_seed, delta):
-    body = build_body()
+def _init_worker(weights, growth_seed, delta, domain="body"):
+    body = build_body() if domain == "body" else build_box()
     _WORKER["body"] = body
     _WORKER["model"] = (DiffusionModel(body) if delta is None
                         else DiffusionModel(body, delta=delta))
@@ -40,7 +40,7 @@ def _eval(genes):
 def run_evolution(pop_size: int = 28, n_generations: int = 40,
                   weights: dict | None = None, seed: int = 0,
                   n_workers: int = 4, elite: int = 2,
-                  delta: float | None = None,
+                  delta: float | None = None, domain: str = "body",
                   verbose: bool = True) -> dict:
     rng = np.random.default_rng(seed)
     growth_seed = 1000 + seed
@@ -49,7 +49,7 @@ def run_evolution(pop_size: int = 28, n_generations: int = 40,
 
     history = []
     with mp.Pool(n_workers, initializer=_init_worker,
-                 initargs=(weights, growth_seed, delta)) as pool:
+                 initargs=(weights, growth_seed, delta, domain)) as pool:
         for gen in range(n_generations):
             results = pool.map(_eval, list(pop))
             fit = np.array([r["fitness"] for r in results])
@@ -105,6 +105,7 @@ def run_evolution(pop_size: int = 28, n_generations: int = 40,
         "seed": seed,
         "growth_seed": growth_seed,
         "weights": weights or {},
+        "domain": domain,
         "pop_size": pop_size,
         "n_generations": n_generations,
     }

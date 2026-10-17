@@ -84,8 +84,11 @@ class Body:
     demand: np.ndarray                 # (nx, ny, nz) O2 demand per voxel [m^3 O2/s]
     tissue_idx: np.ndarray = field(default=None)   # (nt, 3) int coords of tissue voxels
     tissue_pts: np.ndarray = field(default=None)   # (nt, 3) centres in metres
+    root: np.ndarray = field(default=None)         # tree root (heart analogue)
 
     def __post_init__(self):
+        if self.root is None:
+            self.root = HEART_POS.copy()
         self.tissue_idx = np.argwhere(self.mask)
         self.tissue_pts = self.origin + (self.tissue_idx + 0.5) * self.voxel
 
@@ -102,6 +105,20 @@ class Body:
     @property
     def tissue_volume(self) -> float:
         return self.mask.sum() * self.voxel ** 3
+
+
+def build_box(voxel: float = VOXEL, side: float = 0.40) -> Body:
+    """Control domain: a uniform-demand cube with the same tissue volume as
+    the human body model (0.40 m side -> 64 L vs 62.9 L) and the root at
+    the cube centre. Isolates which network properties come from the
+    physics/economics rather than the body's shape or organ layout."""
+    n = int(round(side / voxel))
+    origin = np.array([-side / 2, -side / 2, 0.0])
+    mask = np.ones((n, n, n), dtype=bool)
+    demand = np.full((n, n, n), VO2_REST / n ** 3)
+    root = np.array([0.0, 0.0, side / 2])
+    return Body(voxel=voxel, origin=origin, shape=(n, n, n),
+                mask=mask, demand=demand, root=root)
 
 
 def build_body(voxel: float = VOXEL) -> Body:

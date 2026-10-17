@@ -15,6 +15,7 @@ from __future__ import annotations
 
 import numpy as np
 from scipy.optimize import brentq
+from scipy.spatial import cKDTree
 from scipy.stats import linregress
 
 from .tree import VascularTree
@@ -165,9 +166,50 @@ def radius_asymmetry(tree: VascularTree) -> float:
     return float(np.mean(ratios)) if ratios else float("nan")
 
 
-def compute_all_metrics(tree: VascularTree) -> dict:
+def clark_evans_index(tree: VascularTree, body) -> float:
+    """Clark-Evans dispersion index of the terminal points in 3D: observed
+    mean nearest-neighbour distance over the expectation for a Poisson
+    process of the same intensity in the tissue volume. 1 = random,
+    > 1 = dispersed towards uniform (space-filling), < 1 = clustered.
+    E[d_NN] for 3D Poisson = Gamma(4/3) * (4*pi*lambda/3)^(-1/3)."""
+    from math import gamma, pi
+    pts = tree.pos[tree.terminals]
+    if len(pts) < 3:
+        return float("nan")
+    kd = cKDTree(pts)
+    d, _ = kd.query(pts, k=2)
+    lam = len(pts) / body.tissue_volume
+    expected = gamma(4.0 / 3.0) * (4.0 * pi * lam / 3.0) ** (-1.0 / 3.0)
+    return float(d[:, 1].mean() / expected)
+
+
+def tissue_vessel_distance(tree: VascularTree, body) -> dict:
+    """Distance from tissue to the nearest vessel centreline: mean and p95
+    (m), plus values normalized by the ideal radius of equal-volume
+    spheres around the terminals (perfect space-filling ~ 0.75 ideal)."""
+    pts = tree.polyline_points(spacing=0.01)
+    kd = cKDTree(pts)
+    d, _ = kd.query(body.tissue_pts, k=1)
+    n_term = max(len(tree.terminals), 1)
+    r_ideal = (3.0 * body.tissue_volume / (4.0 * np.pi * n_term)) ** (1.0 / 3.0)
+    return {
+        "mean_tissue_vessel_dist_cm": float(d.mean() * 100),
+        "p95_tissue_vessel_dist_cm": float(np.percentile(d, 95) * 100),
+        "mean_dist_over_ideal": float(d.mean() / r_ideal),
+    }
+
+
+def space_filling_metrics(tree: VascularTree, body) -> dict:
+    out = {"clark_evans": clark_evans_index(tree, body),
+           "length_density_m_per_L": float(
+               tree.total_length / (body.tissue_volume * 1e3))}
+    out.update(tissue_vessel_distance(tree, body))
+    return out
+
+
+def compute_all_metrics(tree: VascularTree, box_sizes=None) -> dict:
     pts = tree.polyline_points(spacing=0.004)
-    fd, sizes, counts = box_counting_dimension(pts)
+    fd, sizes, counts = box_counting_dimension(pts, sizes=box_sizes)
     mur, _ = murray_exponent(tree)
     sr = strahler_ratios(tree)
     mc = motif_census(tree)

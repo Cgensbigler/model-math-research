@@ -134,7 +134,7 @@ def grow_tree(genes: np.ndarray, body: Body, rng: np.random.Generator,
     g = genome_dict(genes)
     attractors = sample_attractors(body, int(round(g["attractors"])), rng)
 
-    pos = [HEART_POS.copy()]
+    pos = [body.root.copy()]
     parent = [-1]
     direction = [np.array([0.0, 0.0, -1.0])]   # aorta initially descends
 

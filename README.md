@@ -125,6 +125,72 @@ heatmap (fig. 6, right) shows seeds 2 and 4 as the outlier pair. This is a
 pleasing echo of real vasculature, where scaling exponents are conserved
 across individuals and species while absolute network size varies.
 
+### Control experiment: the same evolution in a box
+
+Does the body's shape matter, or are the network properties intrinsic to the
+delivery/cost physics? We repeated the full 10-seed ensemble in a
+uniform-demand cube of equal tissue volume (40 cm side, 64 L vs the body's
+62.9 L), same voxel size, same physics, same evolutionary budget, with the
+root at the cube centre (`experiments/run_box.py`). To make geometric
+comparisons fair, fractal dimensions here are measured over the same
+1–12 cm box-counting window for all networks, and two explicit space-filling
+measures are added: the Clark–Evans dispersion of the terminal points
+(1 = Poisson, >1 = uniform-like, <1 = clustered) and the mean
+tissue-to-vessel distance normalized by the ideal equal-territory radius.
+
+![Box gallery](figures/fig9_box_gallery.png)
+![Box vs body](figures/fig10_box_vs_body.png)
+![Scaling overlay](figures/fig11_scaling_overlay.png)
+
+| Property | Cube optima (10) | Body optima (10) | Human ref | Literature |
+|---|---|---|---|---|
+| Fractal dimension (scale-matched) | 2.23 ± 0.03 | 1.87 ± 0.13 | 1.42 | 2.2–2.9 |
+| Murray exponent γ | 3.17 ± 0.14 | 3.17 ± 0.17 | 2.7 | 2.3–3.0 |
+| Strahler bifurcation ratio | 3.40 ± 0.16 | 3.85 ± 0.28 | 4.13 | 2.5–4.0 |
+| Mean daughters/junction | 2.65 ± 0.02 | 2.76 ± 0.11 | 2.43 | 2.0–2.3 |
+| Radius asymmetry r₂/r₁ | 0.86 ± 0.01 | 0.81 ± 0.02 | 0.84 | 0.5–0.9 |
+| Tortuosity | 1.78 ± 0.04 | 2.06 ± 0.31 | 1.94 | — |
+| Clark–Evans dispersion | 0.82 ± 0.02 | 0.84 ± 0.09 | 1.27 | — |
+| Tissue–vessel dist. / ideal radius | 0.66 ± 0.01 | 0.77 ± 0.03 | 0.66 | — |
+| Length density (m/L) | 2.11 ± 0.12 | 2.6 ± 0.9 | 0.47 | — |
+| N terminals | 2,200 ± 90 | 2,000 ± 600 | 364 | — |
+
+(Full table: `results/box_comparison_table.md`.)
+
+**Topological and radius-scaling properties are domain-independent.** The
+Murray exponent distributions in cube and body are statistically
+indistinguishable (3.17 ± 0.14 vs 3.17 ± 0.17), junction asymmetry,
+daughters-per-junction, bifurcation ratio and terminal counts land within a
+few percent of each other, and the Horton–Strahler branch-count lines share
+one slope (fig. 11, right). These properties are set by the economics of
+delivery, not by anatomy.
+
+**Metric/embedding properties carry the domain's signature.** In the cube
+the scale-matched fractal dimension rises to 2.23 ± 0.03 — into the
+measured range for real vascular beds — while the same optimization pressed
+into a human silhouette yields 1.87 ± 0.13: threading a network through
+quasi-one-dimensional limbs dilutes box counts at intermediate scales, and
+tortuosity rises (1.78 → 2.06) as vessels navigate the geometry. Comparing
+vascular fractal dimensions across organs of different shape without
+scale-matching is therefore misleading — part of the measured "fractality"
+is the container, not the network.
+
+**The cube also shows what the body's shape does to the fitness
+landscape.** All 10 cube runs converge on one tight optimum (fitness
+0.8672–0.8762, terminals 1,995–2,289); the body ensemble split into two
+basins. The multimodality of the body problem comes from its geometry —
+deciding how much network to commit to each appendage — not from the
+physics.
+
+**Space-filling.** Evolved optima in both domains fill space the same way:
+tissue sits at 0.66–0.77 of the ideal territory radius from the nearest
+vessel, with terminals mildly *clustered* relative to Poisson (CE ≈ 0.82).
+The anatomical reference is more regular (CE = 1.27, lattice-like spacing
+from its constant kill radius) yet achieves the same normalized
+tissue–vessel distance (0.66) with one-fifth the length density — a
+reminder that regular spacing, which real development approximates through
+local feedback, is the material-efficient way to fill a volume.
+
 ### Sensitivity analysis
 
 ![Sensitivity](figures/fig7_sensitivity.png)
@@ -174,7 +240,9 @@ pip install -r requirements.txt
 python3 experiments/run_main.py          # ~3 min on 4 cores
 python3 experiments/run_diversity.py     # ~15 min, 10 seeds
 python3 experiments/run_sensitivity.py   # ~15 min, 18 conditions
-python3 experiments/make_figures.py      # all figures + comparison table
+python3 experiments/run_box.py           # ~20 min, 10 seeds in the cube
+python3 experiments/make_figures.py      # figs 1-8 + comparison table
+python3 experiments/make_box_figures.py  # figs 9-11 + box table
 ```
 
 All experiment outputs (champion trees, metrics, histories) are committed

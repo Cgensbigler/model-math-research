@@ -1,0 +1,75 @@
+{
+  "metrics": {
+    "fractal_dimension": 1.6525936209947056,
+    "murray_exponent": 2.6999999999999997,
+    "mean_daughters": 2.4347826086956523,
+    "radius_asymmetry": 0.8362996896840297,
+    "tortuosity": 1.9365604314507374,
+    "total_length_m": 29.22789955416454,
+    "material_volume_L": 0.363485347712366,
+    "n_segments": 980,
+    "n_terminals": 364,
+    "root_radius_mm": 12.5,
+    "mean_segment_length_cm": 2.9824387300167894,
+    "length_to_radius": 29.316756921170033,
+    "span_x_m": 0.6337271188268944,
+    "span_y_m": 0.2471978552720271,
+    "span_z_m": 1.7406266039766747,
+    "box_sizes": [
+      0.01,
+      0.01469734492275599,
+      0.02160119477784612,
+      0.03174802103936399,
+      0.046661161583044654,
+      0.06857951862824582,
+      0.10079368399158986,
+      0.14813995396596644,
+      0.2177264000279003,
+      0.32
+    ],
+    "box_counts": [
+      3406.0,
+      2322.0,
+      1569.0,
+      949.0,
+      543.0,
+      283.0,
+      155.0,
+      63.0,
+      24.0,
+      12.0
+    ],
+    "bifurcation_ratio": 4.133895987998314,
+    "length_ratio": 1.8726785872088658,
+    "radius_ratio": 1.82184182291702,
+    "max_strahler_order": 5,
+    "orders": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "branches_per_order": [
+      364.0,
+      99.0,
+      32.0,
+      9.0,
+      1.0
+    ],
+    "n_bifurcations": 145,
+    "n_trifurcations": 106,
+    "n_higher_furcations": 2,
+    "n_continuations": 364
+  },
+  "eval": {
+    "fitness": 0.6381569269990284,
+    "coverage": 0.9247995928235144,
+    "speed_penalty": 0.7962377723706864,
+    "material_norm": 0.7269706954247319,
+    "power_norm": 0.14886153189341264,
+    "material_volume_L": 0.363485347712366,
+    "pumping_power_W": 0.038452626987993774
+  },
+  "n_named": 39
+}

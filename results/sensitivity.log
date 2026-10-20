@@ -1,0 +1,36 @@
+=== sweep w_time_0.0625 ===
+  fit=0.8459 cov=0.987 terms=2322 V=0.41L (39s)
+=== sweep w_time_0.125 ===
+  fit=0.8239 cov=0.990 terms=2280 V=0.34L (42s)
+=== sweep w_time_0.25 ===
+  fit=0.7909 cov=0.999 terms=2347 V=0.36L (45s)
+=== sweep w_time_0.5 ===
+  fit=0.6895 cov=1.000 terms=2352 V=0.51L (42s)
+=== sweep w_time_1 ===
+  fit=0.5206 cov=0.994 terms=2349 V=0.40L (49s)
+=== sweep w_mat_0.025 ===
+  fit=0.8640 cov=1.000 terms=2376 V=0.70L (44s)
+=== sweep w_mat_0.05 ===
+  fit=0.8255 cov=0.993 terms=2306 V=0.52L (46s)
+=== sweep w_mat_0.1 ===
+  fit=0.7909 cov=0.999 terms=2347 V=0.36L (42s)
+=== sweep w_mat_0.2 ===
+  fit=0.7230 cov=0.974 terms=1247 V=0.21L (35s)
+=== sweep w_mat_0.4 ===
+  fit=0.6725 cov=0.985 terms=1268 V=0.11L (38s)
+=== sweep w_pow_0.025 ===
+  fit=0.8115 cov=0.989 terms=2328 V=0.28L (39s)
+=== sweep w_pow_0.05 ===
+  fit=0.7924 cov=0.991 terms=2306 V=0.32L (37s)
+=== sweep w_pow_0.1 ===
+  fit=0.7909 cov=0.999 terms=2347 V=0.36L (42s)
+=== sweep w_pow_0.2 ===
+  fit=0.7492 cov=0.991 terms=2338 V=0.55L (46s)
+=== sweep w_pow_0.4 ===
+  fit=0.7330 cov=0.994 terms=2307 V=0.49L (48s)
+=== sweep delta_0.025 ===
+  fit=0.3945 cov=0.690 terms=2387 V=0.43L (40s)
+=== sweep delta_0.045 ===
+  fit=0.8395 cov=1.000 terms=2312 V=0.34L (44s)
+=== sweep delta_0.06 ===
+  fit=0.8847 cov=1.000 terms=658 V=0.14L (28s)

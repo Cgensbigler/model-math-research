@@ -1,0 +1,21 @@
+box domain: (20, 20, 20) tissue=64.0 L
+=== box seed 0 ===
+  fit=0.8744 cov=1.000 terms=2143 FD=2.21 CE=0.83 (113s)
+=== box seed 1 ===
+  fit=0.8672 cov=1.000 terms=1995 FD=2.18 CE=0.83 (109s)
+=== box seed 2 ===
+  fit=0.8736 cov=1.000 terms=2288 FD=2.26 CE=0.82 (114s)
+=== box seed 3 ===
+  fit=0.8760 cov=1.000 terms=2232 FD=2.21 CE=0.80 (118s)
+=== box seed 4 ===
+  fit=0.8747 cov=1.000 terms=2229 FD=2.24 CE=0.79 (118s)
+=== box seed 5 ===
+  fit=0.8749 cov=1.000 terms=2093 FD=2.21 CE=0.84 (120s)
+=== box seed 6 ===
+  fit=0.8750 cov=1.000 terms=2211 FD=2.23 CE=0.84 (119s)
+=== box seed 7 ===
+  fit=0.8744 cov=1.000 terms=2283 FD=2.25 CE=0.80 (119s)
+=== box seed 8 ===
+  fit=0.8748 cov=1.000 terms=2289 FD=2.27 CE=0.82 (116s)
+=== box seed 9 ===
+  fit=0.8762 cov=1.000 terms=2249 FD=2.25 CE=0.80 (118s)

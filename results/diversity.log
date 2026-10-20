@@ -1,0 +1,20 @@
+=== diversity seed 0 ===
+  fit=0.7941 cov=1.000 terms=2385 FD=2.07 (87s)
+=== diversity seed 1 ===
+  fit=0.7964 cov=1.000 terms=2322 FD=2.03 (82s)
+=== diversity seed 2 ===
+  fit=0.7801 cov=0.990 terms=982 FD=1.83 (55s)
+=== diversity seed 3 ===
+  fit=0.7945 cov=0.998 terms=2301 FD=2.05 (74s)
+=== diversity seed 4 ===
+  fit=0.7527 cov=0.989 terms=606 FD=1.79 (47s)
+=== diversity seed 5 ===
+  fit=0.7937 cov=0.994 terms=2282 FD=2.04 (70s)
+=== diversity seed 6 ===
+  fit=0.7921 cov=1.000 terms=2266 FD=2.05 (82s)
+=== diversity seed 7 ===
+  fit=0.7505 cov=0.980 terms=2310 FD=2.07 (78s)
+=== diversity seed 8 ===
+  fit=0.8045 cov=0.999 terms=2268 FD=2.03 (79s)
+=== diversity seed 9 ===
+  fit=0.8066 cov=1.000 terms=2350 FD=2.04 (78s)
